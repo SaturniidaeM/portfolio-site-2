@@ -83,15 +83,27 @@
     <div class="logo">VL<span>.</span></div>
     <nav class="nav">
       <a href="#about" data-i18n="nav.about">Обо мне</a>
+      <a href="#skills" data-i18n="nav.skills">Навыки</a>
       <a href="#hobbies" data-i18n="nav.hobbies">Увлечения</a>
       <a href="#contacts" data-i18n="nav.contacts">Контакты</a>
     </nav>
     <div class="header__actions">
       <button class="lang-toggle" id="langToggle" aria-label="Switch language">EN</button>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">☀</button>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
 </header>
+
+<!-- Мобильное меню -->
+<div class="nav-overlay" id="navOverlay">
+  <a href="#about" data-i18n="nav.about">Обо мне</a>
+  <a href="#skills" data-i18n="nav.skills">Навыки</a>
+  <a href="#hobbies" data-i18n="nav.hobbies">Увлечения</a>
+  <a href="#contacts" data-i18n="nav.contacts">Контакты</a>
+</div>
 
 <!-- ============ HERO ============ -->
 <section class="hero">
@@ -147,6 +159,79 @@
         <img src="image.jpg" alt="Вероника Лукаш — девушка в капюшоне и очках на фоне брусчатки в закатном свете">
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ============ НАВЫКИ ============ -->
+<section class="section" id="skills">
+  <div class="container">
+    <h2 class="section__title reveal" data-i18n="skills.title">Навыки и <span>инструменты</span></h2>
+    <p class="section__lead reveal" data-i18n="skills.lead">Программы, в которых я работаю каждый день — от графики и моушена до 3D.</p>
+
+    <ul class="skills__grid reveal">
+      <li class="skill-card" style="--i:0; --level:95%">
+        <div class="skill-card__head">
+          <span class="skill-card__dot"></span>
+          <span class="skill-card__name">Adobe Photoshop</span>
+          <span class="skill-card__pct">95%</span>
+        </div>
+        <div class="skill-card__bar"><span></span></div>
+      </li>
+
+      <li class="skill-card" style="--i:1; --level:88%">
+        <div class="skill-card__head">
+          <span class="skill-card__dot"></span>
+          <span class="skill-card__name">Adobe Illustrator</span>
+          <span class="skill-card__pct">88%</span>
+        </div>
+        <div class="skill-card__bar"><span></span></div>
+      </li>
+
+      <li class="skill-card" style="--i:2; --level:85%">
+        <div class="skill-card__head">
+          <span class="skill-card__dot"></span>
+          <span class="skill-card__name">Figma</span>
+          <span class="skill-card__pct">85%</span>
+        </div>
+        <div class="skill-card__bar"><span></span></div>
+      </li>
+
+      <li class="skill-card" style="--i:3; --level:78%">
+        <div class="skill-card__head">
+          <span class="skill-card__dot"></span>
+          <span class="skill-card__name">Adobe After Effects</span>
+          <span class="skill-card__pct">78%</span>
+        </div>
+        <div class="skill-card__bar"><span></span></div>
+      </li>
+
+      <li class="skill-card" style="--i:4; --level:72%">
+        <div class="skill-card__head">
+          <span class="skill-card__dot"></span>
+          <span class="skill-card__name">Krita</span>
+          <span class="skill-card__pct">72%</span>
+        </div>
+        <div class="skill-card__bar"><span></span></div>
+      </li>
+
+      <li class="skill-card" style="--i:5; --level:65%">
+        <div class="skill-card__head">
+          <span class="skill-card__dot"></span>
+          <span class="skill-card__name">VS Code</span>
+          <span class="skill-card__pct">65%</span>
+        </div>
+        <div class="skill-card__bar"><span></span></div>
+      </li>
+
+      <li class="skill-card" style="--i:6; --level:55%">
+        <div class="skill-card__head">
+          <span class="skill-card__dot"></span>
+          <span class="skill-card__name">Blender</span>
+          <span class="skill-card__pct">55%</span>
+        </div>
+        <div class="skill-card__bar"><span></span></div>
+      </li>
+    </ul>
   </div>
 </section>
 
@@ -351,10 +436,13 @@
 <!-- ============ ФУТЕР ============ -->
 <footer class="footer">
   <div class="container footer__inner">
-    <p data-i18n="footer.copy">© 2025 <span>Вероника Лукаш</span>. Все права защищены.</p>
+    <p data-i18n="footer.copy">© 2026 <span>Вероника Лукаш</span>. Все права защищены.</p>
     <p data-i18n="footer.made">Verity</p>
   </div>
 </footer>
+
+<!-- Кнопка «наверх» -->
+<button class="to-top" id="toTop" aria-label="Наверх">↑</button>
 
 <!-- Тост -->
 <div class="toast" id="toast" data-i18n="toast.sent">✓ Сообщение отправлено!</div>
@@ -364,6 +452,7 @@
 const translations = {
   ru: {
     'nav.about': 'Обо мне',
+    'nav.skills': 'Навыки',
     'nav.hobbies': 'Увлечения',
     'nav.contacts': 'Контакты',
     'hero.tag': '// студентка · художник · геймдизайнер',
@@ -380,6 +469,8 @@ const translations = {
     'about.f2': '3D-моделирование',
     'about.f3': 'Геймдев',
     'about.f4': 'Графический дизайн',
+    'skills.title': 'Навыки и <span>инструменты</span>',
+    'skills.lead': 'Программы, в которых я работаю каждый день — от графики и моушена до 3D.',
     'hobbies.title': 'Чем я <span>горю</span>',
     'hobbies.lead': 'Три направления, между которыми живёт моё творчество, и то, что я люблю вне работы.',
     's1.title': 'Геймдев',
@@ -419,12 +510,13 @@ const translations = {
     'form.send': 'Отправить',
     'surprise.hint': 'Не знаешь, что дальше? Жми.',
     'surprise.btn': 'Удиви меня',
-    'footer.copy': '© 2025 <span>Вероника Лукаш</span>. Все права защищены.',
+    'footer.copy': '© 2026 <span>Вероника Лукаш</span>. Все права защищены.',
     'footer.made': 'Verity',
     'toast.sent': '✓ Сообщение отправлено!'
   },
   en: {
     'nav.about': 'About',
+    'nav.skills': 'Skills',
     'nav.hobbies': 'Passions',
     'nav.contacts': 'Contacts',
     'hero.tag': '// student · artist · game designer',
@@ -441,6 +533,8 @@ const translations = {
     'about.f2': '3D Modeling',
     'about.f3': 'Gamedev',
     'about.f4': 'Graphic Design',
+    'skills.title': 'Skills & <span>tools</span>',
+    'skills.lead': 'Software I use every day — from graphics and motion to 3D.',
     'hobbies.title': "What I'm <span>passionate about</span>",
     'hobbies.lead': 'Three directions my creativity lives in — plus what I love outside of work.',
     's1.title': 'Gamedev',
@@ -480,7 +574,7 @@ const translations = {
     'form.send': 'Send',
     'surprise.hint': "Don't know what's next? Hit it.",
     'surprise.btn': 'Surprise me',
-    'footer.copy': '© 2025 <span>Veronika Lukash</span>. All rights reserved.',
+    'footer.copy': '© 2026 <span>Veronika Lukash</span>. All rights reserved.',
     'footer.made': 'Verity',
     'toast.sent': '✓ Message sent!'
   }
@@ -519,9 +613,6 @@ let mouseX = innerWidth / 2, mouseY = innerHeight / 2;
 let curX = mouseX, curY = mouseY;
 let glowX = mouseX, glowY = mouseY;
 
-/* Скорость следования — ОДНА на двоих.
-   0.4 → плавно, звезда и гало идут синхронно
-   1   → мгновенно, без догоняния */
 const FOLLOW = 0.4;
 
 document.addEventListener('mousemove', e => {
@@ -589,6 +680,47 @@ window.addEventListener('scroll', updateShapeGroups);
 window.addEventListener('resize', updateShapeGroups);
 updateShapeGroups();
 
+/* ============ БУРГЕР-МЕНЮ ============ */
+const burger = document.getElementById('burger');
+const navOverlay = document.getElementById('navOverlay');
+
+function closeMenu() {
+  burger.classList.remove('is-open');
+  navOverlay.classList.remove('show');
+  burger.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+
+if (burger && navOverlay) {
+  burger.addEventListener('click', () => {
+    const isOpen = burger.classList.toggle('is-open');
+    navOverlay.classList.toggle('show', isOpen);
+    burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+
+  navOverlay.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', closeMenu);
+  });
+
+  // закрытие по Esc
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && burger.classList.contains('is-open')) closeMenu();
+  });
+}
+
+/* ============ КНОПКА "НАВЕРХ" ============ */
+const toTop = document.getElementById('toTop');
+
+if (toTop) {
+  window.addEventListener('scroll', () => {
+    toTop.classList.toggle('show', window.scrollY > 400);
+  });
+  toTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
 /* ============ СЛАЙДЕР ============ */
 const track = document.getElementById('track');
 const slides = Array.from(track.children);
@@ -643,7 +775,7 @@ form.addEventListener('submit', e => {
   form.reset();
 });
 
-/* ============ ПРОЛЕТАЮЩАЯ МАШИНКА (слайд Formula 1) ============ */
+/* ============ ПРОЛЕТАЮЩАЯ МАШИНКА ============ */
 const rideBtn = document.getElementById('rideBtn');
 const MACHINE_IMAGE = 'machine.png';
 
